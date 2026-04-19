@@ -1,0 +1,203 @@
+---
+import "../styles/styles.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "A simple Astro page." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/og.png" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>{title}</title>
+    <script is:inline>
+      (() => {
+        const themeStorageKey = "theme-preference";
+        const root = document.documentElement;
+        const preferredTheme = localStorage.getItem(themeStorageKey) ?? "system";
+
+        root.dataset.themeMode = preferredTheme;
+
+        if (preferredTheme === "light") {
+          root.dataset.theme = "catppuccin-latte";
+          root.style.colorScheme = "light";
+        } else if (preferredTheme === "dark") {
+          root.dataset.theme = "catppuccin-mocha";
+          root.style.colorScheme = "dark";
+        } else {
+          delete root.dataset.theme;
+          root.style.colorScheme = "light dark";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+    <script is:inline>
+      (() => {
+        const themeStorageKey = "theme-preference";
+        const themeSelect = document.querySelector("#theme-select");
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const root = document.documentElement;
+
+        const applyThemePreference = (preference) => {
+          root.dataset.themeMode = preference;
+
+          if (preference === "light") {
+            root.dataset.theme = "catppuccin-latte";
+            root.style.colorScheme = "light";
+          } else if (preference === "dark") {
+            root.dataset.theme = "catppuccin-mocha";
+            root.style.colorScheme = "dark";
+          } else {
+            delete root.dataset.theme;
+            root.style.colorScheme = "light dark";
+          }
+        };
+
+        const currentPreference = localStorage.getItem(themeStorageKey) ?? "system";
+        if (themeSelect instanceof HTMLSelectElement) {
+          themeSelect.value = currentPreference;
+          themeSelect.addEventListener("change", (event) => {
+            const target = event.currentTarget;
+            if (!(target instanceof HTMLSelectElement)) return;
+
+            const preference = target.value;
+            localStorage.setItem(themeStorageKey, preference);
+            applyThemePreference(preference);
+          });
+        }
+
+        media.addEventListener("change", () => {
+          const preference = localStorage.getItem(themeStorageKey) ?? "system";
+          if (preference === "system") {
+            applyThemePreference(preference);
+          }
+        });
+
+        const reducedMotionMedia = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        );
+        const FAQ_DURATION_MS = 230;
+        const FAQ_EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
+
+        const animateDetailsHeight = (details, open) => {
+          if (!(details instanceof HTMLDetailsElement)) return;
+          if (details.open === open) return;
+          if (details.dataset.animating === "true") return;
+
+          details.dataset.animating = "true";
+
+          const startHeight = details.getBoundingClientRect().height;
+          details.style.transition = "none";
+          details.style.overflow = "hidden";
+          details.style.height = `${startHeight}px`;
+          details.getBoundingClientRect();
+
+          let endHeight = startHeight;
+
+          if (open) {
+            details.open = true;
+            details.style.height = "auto";
+            endHeight = details.getBoundingClientRect().height;
+            details.style.height = `${startHeight}px`;
+          } else {
+            details.open = false;
+            details.style.height = "auto";
+            endHeight = details.getBoundingClientRect().height;
+            details.open = true;
+            details.style.height = `${startHeight}px`;
+          }
+
+          if (Math.abs(endHeight - startHeight) < 0.5) {
+            details.open = open;
+            details.style.removeProperty("height");
+            details.style.removeProperty("overflow");
+            details.style.removeProperty("transition");
+            delete details.dataset.animating;
+            return;
+          }
+
+          details.getBoundingClientRect();
+
+          details.style.transition = `height ${FAQ_DURATION_MS}ms ${FAQ_EASING}`;
+          requestAnimationFrame(() => {
+            details.style.height = `${endHeight}px`;
+          });
+
+          const cleanup = (event) => {
+            if (!(event.target instanceof HTMLDetailsElement)) return;
+            if (event.target !== details || event.propertyName !== "height") return;
+            details.open = open;
+            details.style.removeProperty("height");
+            details.style.removeProperty("overflow");
+            details.style.removeProperty("transition");
+            delete details.dataset.animating;
+            details.removeEventListener("transitionend", cleanup);
+          };
+
+          details.addEventListener("transitionend", cleanup);
+        };
+
+        document.addEventListener("click", (event) => {
+          const rawTarget = event.target;
+          const target =
+            rawTarget instanceof Element
+              ? rawTarget
+              : rawTarget instanceof Node
+                ? rawTarget.parentElement
+                : null;
+          if (!(target instanceof Element)) return;
+
+          const summary = target.closest("summary");
+          if (!(summary instanceof HTMLElement)) return;
+
+          const item = summary.closest("details");
+          if (!(item instanceof HTMLDetailsElement)) return;
+
+          event.preventDefault();
+
+          const wasOpen = item.open;
+          const items = document.querySelectorAll("main details");
+          const shouldOpen = !wasOpen;
+          const reducedMotion = reducedMotionMedia.matches;
+
+          for (const other of items) {
+            if (!(other instanceof HTMLDetailsElement)) continue;
+            if (other === item) continue;
+
+            if (reducedMotion) {
+              other.open = false;
+            } else {
+              animateDetailsHeight(other, false);
+            }
+          }
+
+          if (reducedMotion) {
+            item.open = shouldOpen;
+          } else {
+            animateDetailsHeight(item, shouldOpen);
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
