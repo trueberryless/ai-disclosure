@@ -1,0 +1,55 @@
+name: Bug report
+description: Report something that is broken or unclear on the site.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is broken?
+      placeholder: The FAQ animation breaks when...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List exact steps so we can reproduce the issue.
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See error ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: It should...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      placeholder: It currently...
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, OS, and device if relevant.
+      placeholder: Chrome 135 on macOS 15.4
+
+  - type: textarea
+    id: ai-disclosure
+    attributes:
+      label: AI disclosure
+      description: Did AI help you prepare this report? If yes, briefly describe where/how.
+      placeholder: AI helped summarize reproduction steps; I verified accuracy.

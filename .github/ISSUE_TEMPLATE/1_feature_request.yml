@@ -1,0 +1,45 @@
+name: Feature request
+description: Propose a new capability or improvement.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What is missing today?
+      placeholder: Teams need a clearer template for...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the change you want.
+      placeholder: Add a section that...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional, but helpful.
+      placeholder: Another option could be...
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Why this helps
+      description: Explain the user value.
+      placeholder: This would help developers by...
+    validations:
+      required: true
+
+  - type: textarea
+    id: ai-disclosure
+    attributes:
+      label: AI disclosure
+      description: Did AI help draft this request? If yes, briefly describe where/how.
+      placeholder: AI helped structure this proposal; I reviewed and edited it.

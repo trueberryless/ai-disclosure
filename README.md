@@ -1,43 +1,26 @@
-# Astro Starter Kit: Minimal
+# AI Disclosure
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+[![Deploy to GitHub Pages](https://github.com/trueberryless/ai-disclosure/actions/workflows/deploy.yml/badge.svg)](https://github.com/trueberryless/ai-disclosure/actions/workflows/deploy.yml)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fai-disclosure.trueberryless.org&label=Live%20site)](https://ai-disclosure.trueberryless.org)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This site is a practical reference for developers on **how and why to disclose AI usage across software work**.
 
-## 🚀 Project Structure
+It focuses on one core idea: openness about AI support improves review quality, trust, and collaboration.
 
-Inside of your Astro project, you'll see the following folders and files:
+## What you’ll find
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- Why AI disclosure matters in day-to-day engineering work
+- Simple disclosure templates teams can adopt in PRs, docs, and proposals
+- Guidance for adding useful context when your answer is always “yes, I used AI”
+- FAQ-style concerns and responses you can share with teams
+- Further reading to understand the tradeoffs from multiple perspectives
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Intended audience
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Developers, reviewers, and engineering teams who want a clear, neutral way to talk about AI assistance in code contributions.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Contributing
 
-## 🧞 Commands
+If you spot a gap, bug, or unclear idea, please contribute. This project is about transparency, so contributions should stay transparent too (no mystery commits, only committed clarity).
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Read **[CONTRIBUTING.md](./CONTRIBUTING.md)** for the full contribution guide.
