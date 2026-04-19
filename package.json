@@ -14,5 +14,6 @@
   "dependencies": {
     "astro": "^6.1.8",
     "astro-expressive-code": "^0.41.7"
-  }
+  },
+  "packageManager": "pnpm@10.10.0"
 }
