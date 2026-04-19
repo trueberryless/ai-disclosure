@@ -93,6 +93,12 @@ Some licenses and companies have rules about which AI models are allowed to help
 They might look at it more closely, but that is a good thing. AI is great at writing code quickly, but it can miss small details. Extra eyes on those parts help prevent bugs.
 </details>
 
+<details>
+<summary>What if disclosure lowers how people rate my work?</summary>
+
+That can happen in the short term, but hiding AI usage is a bigger long-term risk. If hidden usage is discovered later, people often feel misled, and trust drops harder than any small rating penalty. Honest disclosure protects credibility, keeps reviews fair, and shows that you stand behind your work.
+</details>
+
 ## Further Reading
 
 ### Industry Standards & Policies
@@ -104,7 +110,7 @@ They might look at it more closely, but that is a good thing. AI is great at wri
 ### Research & Perspectives
 - [Do Users Write More Insecure Code with AI? (arXiv)](https://arxiv.org/abs/2211.03622)
 - [The Transparency Dilemma in AI Disclosure (ScienceDirect)](https://www.sciencedirect.com/science/article/pii/S0749597825000172)
-- [Linux’s AI-Code Debate (Tom’s Hardware)](https://www.tomshardware.com/software/linux/linux-lays-down-the-law-on-ai-generated-code)
+- [How Does the Disclosure of AI Assistance Affect the Perceptions of Writing? (EMNLP 2024)](https://aclanthology.org/2024.emnlp-main.279/)
 
 <p class="site-disclosure">
   <b>Disclosure:</b> This entire website and its design were vibe-coded with the help of AI under the MIT License. <br/>
