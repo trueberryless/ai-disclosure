@@ -113,6 +113,7 @@ That can happen in the short term, but hiding AI usage is a bigger long-term ris
 - [How Does the Disclosure of AI Assistance Affect the Perceptions of Writing? (EMNLP 2024)](https://aclanthology.org/2024.emnlp-main.279/)
 
 <p class="site-disclosure">
-  <b>Disclosure:</b> This entire website and its design were vibe-coded with the help of AI under the MIT License. <br/>
+  <b>Disclosure:</b> This entire website and its design were vibe-coded with the help of AI under the MIT License.
+  <a href="https://github.com/trueberryless/ai-disclosure">Source code</a>. <br/>
   © 2026 Felix Schneider, who takes full responsibility for the content and code provided here.
 </p>
