@@ -82,6 +82,7 @@ body {
     Apple Color Emoji,
     Segoe UI Emoji;
   line-height: 1.65;
+  overflow-x: hidden;
 }
 
 main {
