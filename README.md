@@ -24,3 +24,27 @@ Developers, reviewers, and engineering teams who want a clear, neutral way to ta
 If you spot a gap, bug, or unclear idea, please contribute. This project is about transparency, so contributions should stay transparent too (no mystery commits, only committed clarity).
 
 Read **[CONTRIBUTING.md](./CONTRIBUTING.md)** for the full contribution guide.
+
+## Development
+
+Requires Node.js 24 and pnpm.
+
+```shell
+pnpm install
+pnpm dev
+```
+
+| Command             | Description                                     |
+| ------------------- | ----------------------------------------------- |
+| `pnpm check`        | Type check with `astro check`                   |
+| `pnpm lint`         | Lint with oxlint                                |
+| `pnpm format:check` | Check formatting with Prettier                  |
+| `pnpm knip`         | Find unused files and dependencies              |
+| `pnpm test`         | Unit and integration tests with Vitest          |
+| `pnpm test:e2e`     | Build, then run the Playwright end-to-end tests |
+
+## License
+
+Licensed under the MIT license, Copyright © trueberryless.
+
+See [LICENSE](https://github.com/trueberryless/ai-disclosure/blob/main/LICENSE) for more information.

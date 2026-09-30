@@ -41,4 +41,4 @@ Most contributions should update:
 
 - `src/content/ai-disclosure.md` for page content
 
-Only change structure/styling when needed to improve readability or accessibility.
+Only change structure/styling when needed to improve readability or accessibility. Run `pnpm check`, `pnpm lint` and `pnpm test` before opening a pull request.
