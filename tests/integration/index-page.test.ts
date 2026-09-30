@@ -7,11 +7,11 @@ let html: string;
 
 beforeAll(async () => {
   const container = await AstroContainer.create({
-    astroConfig: { site: "https://ai-disclosure.trueberryless.org" },
+    astroConfig: { site: "https://ai-disclosure.netlify.app" },
   });
 
   html = await container.renderToString(Page, {
-    request: new Request("https://ai-disclosure.trueberryless.org/"),
+    request: new Request("https://ai-disclosure.netlify.app/"),
   });
 });
 
@@ -28,10 +28,10 @@ describe("index page", () => {
 
   test("sets canonical and Open Graph metadata", () => {
     expect(html).toContain(
-      '<link rel="canonical" href="https://ai-disclosure.trueberryless.org/">'
+      '<link rel="canonical" href="https://ai-disclosure.netlify.app/">'
     );
     expect(html).toContain(
-      'content="https://ai-disclosure.trueberryless.org/og-image.png"'
+      'content="https://ai-disclosure.netlify.app/og-image.png"'
     );
     expect(html).toContain('<meta property="og:image:alt"');
   });

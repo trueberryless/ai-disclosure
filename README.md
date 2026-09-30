@@ -1,7 +1,6 @@
 # AI Disclosure
 
-[![Deploy to GitHub Pages](https://github.com/trueberryless/ai-disclosure/actions/workflows/deploy.yml/badge.svg)](https://github.com/trueberryless/ai-disclosure/actions/workflows/deploy.yml)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fai-disclosure.trueberryless.org&label=Live%20site)](https://ai-disclosure.trueberryless.org)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fai-disclosure.netlify.app&label=Live%20site)](https://ai-disclosure.netlify.app)
 
 This site is a practical reference for developers on **how and why to disclose AI usage across software work**.
 

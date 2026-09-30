@@ -8,5 +8,5 @@ export default defineConfig({
       themes: ["catppuccin-latte", "catppuccin-mocha"],
     }),
   ],
-  site: "https://ai-disclosure.trueberryless.org",
+  site: "https://ai-disclosure.netlify.app",
 });
