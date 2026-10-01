@@ -1,0 +1,36 @@
+---
+import { THEME_PREFERENCES } from "../libs/theme";
+
+const labels = { dark: "Dark", light: "Light", system: "System" };
+---
+
+<label class="theme-select">
+  <span>Theme</span>
+  <select id="theme-select">
+    {THEME_PREFERENCES.map((preference) => (
+      <option value={preference}>{labels[preference]}</option>
+    ))}
+  </select>
+</label>
+
+<script>
+  import "../scripts/theme-select";
+</script>
+
+<style>
+  .theme-select {
+    align-items: center;
+    display: inline-flex;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  select {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 0.25rem;
+    color: inherit;
+    font: inherit;
+    padding: 0.35rem 0.5rem;
+  }
+</style>

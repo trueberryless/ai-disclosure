@@ -1,7 +1,6 @@
 # AI Disclosure
 
-[![Deploy to GitHub Pages](https://github.com/trueberryless/ai-disclosure/actions/workflows/deploy.yml/badge.svg)](https://github.com/trueberryless/ai-disclosure/actions/workflows/deploy.yml)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fai-disclosure.trueberryless.org&label=Live%20site)](https://ai-disclosure.trueberryless.org)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fai-disclosure.netlify.app&label=Live%20site)](https://ai-disclosure.netlify.app)
 
 This site is a practical reference for developers on **how and why to disclose AI usage across software work**.
 
@@ -24,3 +23,27 @@ Developers, reviewers, and engineering teams who want a clear, neutral way to ta
 If you spot a gap, bug, or unclear idea, please contribute. This project is about transparency, so contributions should stay transparent too (no mystery commits, only committed clarity).
 
 Read **[CONTRIBUTING.md](./CONTRIBUTING.md)** for the full contribution guide.
+
+## Development
+
+Requires Node.js 24 and pnpm.
+
+```shell
+pnpm install
+pnpm dev
+```
+
+| Command             | Description                                     |
+| ------------------- | ----------------------------------------------- |
+| `pnpm check`        | Type check with `astro check`                   |
+| `pnpm lint`         | Lint with oxlint                                |
+| `pnpm format:check` | Check formatting with Prettier                  |
+| `pnpm knip`         | Find unused files and dependencies              |
+| `pnpm test`         | Unit and integration tests with Vitest          |
+| `pnpm test:e2e`     | Build, then run the Playwright end-to-end tests |
+
+## License
+
+Licensed under the MIT license, Copyright © trueberryless.
+
+See [LICENSE](https://github.com/trueberryless/ai-disclosure/blob/main/LICENSE) for more information.

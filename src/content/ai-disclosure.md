@@ -57,43 +57,43 @@ The most important rule is that humans are always in charge. It does not matter 
 
 ## FAQ
 
-<details>
+<details name="faq">
 <summary>Does admitting I used AI make me look lazy?</summary>
 
 No. Great developers use the best tools available to work faster. Being honest about your tools shows that you care about the result and that you are an honest teammate.
 </details>
 
-<details>
+<details name="faq">
 <summary>What if I used AI to quickly brainstorm a solution?</summary>
 
 That is a great use of the tool. But before sharing it as final work, you must review it carefully. If it is only a draft, label it clearly as work in progress and disclose that AI helped produce it so others do not mistake it for production-ready output.
 </details>
 
-<details>
+<details name="faq">
 <summary>When do I actually need to mention it?</summary>
 
 You do not need to mention it for small things like auto-completing a variable name. You should mention it when the AI writes a whole function, suggests a new way to structure code, or creates complex logic for you.
 </details>
 
-<details>
+<details name="faq">
 <summary>What is "AI Slop" and how do I avoid it?</summary>
 
 AI Slop refers to low-effort, unreviewed code that is just "dumped" into a project. You avoid this by taking the time to understand every line the AI suggests. Never merge something you couldn't have explained to a teammate yourself.
 </details>
 
-<details>
+<details name="faq">
 <summary>Why does transparency matter for legal reasons?</summary>
 
 Some licenses and companies have rules about which AI models are allowed to help write code. Being open helps the company stay safe and ensures the code doesn't violate any legal rules or copyrights.
 </details>
 
-<details>
+<details name="faq">
 <summary>Will people judge my code more strictly if I say I used AI?</summary>
 
 They might look at it more closely, but that is a good thing. AI is great at writing code quickly, but it can miss small details. Extra eyes on those parts help prevent bugs.
 </details>
 
-<details>
+<details name="faq">
 <summary>What if disclosure lowers how people rate my work?</summary>
 
 That can happen in the short term, but hiding AI usage is a bigger long-term risk. If hidden usage is discovered later, people often feel misled, and trust drops harder than any small rating penalty. Honest disclosure protects credibility, keeps reviews fair, and shows that you stand behind your work.

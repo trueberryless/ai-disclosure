@@ -1,28 +1,57 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import ThemeSelect from "../components/ThemeSelect.astro";
 import * as disclosure from "../content/ai-disclosure.md";
+import Layout from "../layouts/Layout.astro";
 
-const { frontmatter, Content } = disclosure;
+const { Content, frontmatter } = disclosure;
 ---
 
-<Layout
-  title={frontmatter.title}
-  description={frontmatter.description}
->
-  <section class="hero">
-    <div class="hero-header">
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <header>
+    <div class="header-inner">
       <h1>{frontmatter.title}</h1>
-      <label>
-        <span class="sr-only">Theme</span>
-        <select id="theme-select" class="theme-control" aria-label="Theme">
-          <option value="system">System</option>
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-        </select>
-      </label>
+      <ThemeSelect />
     </div>
-    <p>{frontmatter.description}</p>
-  </section>
+    <p class="lead">{frontmatter.description}</p>
+  </header>
 
-  <Content />
+  <main id="content">
+    <Content />
+  </main>
 </Layout>
+
+<style>
+  header {
+    border-block-end: 1px solid var(--border);
+    margin-inline: auto;
+    max-inline-size: var(--measure);
+    padding: clamp(1.5rem, 5vw, 3.5rem) var(--gutter) 2rem;
+  }
+
+  .header-inner {
+    align-items: start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 7vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .lead {
+    color: var(--muted);
+    font-size: 1.15rem;
+    margin-block: 1.25rem 0;
+  }
+
+  main {
+    margin-inline: auto;
+    max-inline-size: var(--measure);
+    padding: 1rem var(--gutter) 4rem;
+  }
+</style>

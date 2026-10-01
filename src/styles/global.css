@@ -1,0 +1,170 @@
+:root {
+  color-scheme: light dark;
+
+  --measure: 46rem;
+  --gutter: clamp(1rem, 5vw, 2rem);
+
+  --bg: light-dark(#eff1f5, #1e1e2e);
+  --panel: light-dark(#e6e9ef, #181825);
+  --fg: light-dark(#4c4f69, #cdd6f4);
+  --muted: light-dark(#5c5f77, #a6adc8);
+  --border: light-dark(#acb0be, #45475a);
+  --link: light-dark(#1a55d1, #89b4fa);
+  --ring: light-dark(#1a55d1, #b4befe);
+
+  --font-body: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  margin-block: 2.5rem 0.75rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p,
+ul,
+ol,
+blockquote,
+pre {
+  margin-block: 1rem;
+}
+
+ul,
+ol {
+  padding-inline-start: 1.4rem;
+}
+
+a {
+  color: var(--link);
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
+blockquote {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  margin-inline: 0;
+  padding: 0.25rem 1rem;
+}
+
+:not(pre) > code {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 0.1rem 0.35rem;
+}
+
+.expressive-code {
+  margin-block: 1rem;
+}
+
+details {
+  border-block-start: 1px solid var(--border);
+}
+
+details:last-of-type {
+  border-block-end: 1px solid var(--border);
+}
+
+details > summary {
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+  padding-block: 0.85rem;
+  padding-inline-end: 2rem;
+  position: relative;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details > summary::after {
+  content: "+";
+  inset-block-start: 0.85rem;
+  inset-inline-end: 0.25rem;
+  position: absolute;
+}
+
+details[open] > summary::after {
+  content: "\2212";
+}
+
+details > :not(summary) {
+  color: var(--muted);
+  margin-block: 0 1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  details {
+    interpolate-size: allow-keywords;
+  }
+
+  details::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+      block-size 0.2s ease,
+      content-visibility 0.2s allow-discrete;
+  }
+
+  details[open]::details-content {
+    block-size: auto;
+  }
+}
+
+.site-disclosure {
+  border-block-start: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-block-start: 3rem;
+  padding-block-start: 1.5rem;
+}
+
+.skip-link {
+  background: var(--bg);
+  color: var(--fg);
+  inset-block-start: 0.5rem;
+  inset-inline-start: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  position: absolute;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
