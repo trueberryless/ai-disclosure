@@ -1,42 +1,6 @@
 {
   "name": "ai-disclosure",
-  "type": "module",
-  "engines": {
-    "node": ">=24"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "format": "prettier . --write",
-    "format:check": "prettier . --check",
-    "knip": "knip",
-    "lint": "oxlint",
-    "test": "vitest run",
-    "test:coverage": "vitest run --coverage",
-    "test:e2e": "pnpm build && playwright test",
-    "check": "astro check"
-  },
-  "dependencies": {
-    "astro": "^7.3.5",
-    "astro-expressive-code": "^0.44.2"
-  },
-  "packageManager": "pnpm@11.28.0",
-  "devDependencies": {
-    "@axe-core/playwright": "^4.13.0",
-    "@playwright/test": "^1.63.0",
-    "@vitest/coverage-v8": "^5.0.3",
-    "knip": "^6.39.0",
-    "oxlint": "^1.86.0",
-    "vitest": "^5.0.3",
-    "@trivago/prettier-plugin-sort-imports": "6.0.2",
-    "prettier": "3.9.9",
-    "prettier-plugin-astro": "1.1.0",
-    "@astrojs/check": "^0.9.10",
-    "@types/node": "^26.6.3",
-    "typescript": "^6.0.3"
-  },
+  "private": true,
   "homepage": "https://ai-disclosure.netlify.app/",
   "bugs": {
     "url": "https://github.com/trueberryless/ai-disclosure/issues"
@@ -47,5 +11,41 @@
   },
   "license": "MIT",
   "author": "trueberryless <trueberryless@gmail.com> (https://felixs.dev)",
-  "private": true
+  "type": "module",
+  "scripts": {
+    "astro": "astro",
+    "build": "astro build",
+    "check": "astro check",
+    "dev": "astro dev",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "knip": "knip",
+    "lint": "oxlint",
+    "preview": "astro preview",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "pnpm build && playwright test"
+  },
+  "dependencies": {
+    "astro": "^7.3.5",
+    "astro-expressive-code": "^0.44.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "@trivago/prettier-plugin-sort-imports": "6.0.2",
+    "@types/node": "^26.6.3",
+    "@vitest/coverage-v8": "^5.0.3",
+    "knip": "^6.39.0",
+    "oxlint": "^1.86.0",
+    "prettier": "3.9.9",
+    "prettier-plugin-astro": "1.1.0",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.3"
+  },
+  "packageManager": "pnpm@11.28.0",
+  "engines": {
+    "node": ">=24"
+  }
 }
